@@ -1,49 +1,42 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
+public class Student {
+    private int code,score;
+    private String name;
 
-public class Student <NAME , FATHERNAME , NUMBER> {
-    private NAME name;
-    private FATHERNAME fathername;
-    private NUMBER number;
+    HashMap<String , String > info = new HashMap<String, String>();
 
-    List<Integer> scores = new ArrayList<>();
+    public void setCode (int code1){
+        this.code=code1;
 
-    public void setName(NAME name) {
-        this.name = name;
+        info.put("code ", String.valueOf(code));
     }
-    public void setFathername(FATHERNAME fathername) {
-        this.fathername = fathername;
-
-    }
-
-    public void setNumber(NUMBER number) {
-        this.number = number;
+    public void setScore (int score1){
+        this.score=score1;
+        info.put("Score ", String.valueOf(score));
 
     }
+    public void setName (String name1){
+        this.name=name1;
+        info.put("Name: ", name);
 
-    public void setScores (int score){
-        scores.add(score);
     }
 
-    public NAME getName() {
+    public int getCode (){
+        return code;
+    }
+    public int getScore (){
+        return score;
+    }
+    public String getName (){
         return name;
     }
 
-    public FATHERNAME getFathername() {
-        return fathername;
+    public void show(){
+        System.out.println(info);
     }
-
-    public NUMBER getNumber() {
-        return number;
-    }
-    public List getScores(){
-        return scores;
-    }
-
-
-
-
 
 
 
